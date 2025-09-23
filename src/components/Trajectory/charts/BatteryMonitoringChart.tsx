@@ -27,7 +27,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { Progress } from "@/components/ui/progress";
+import { ProgressIndicator } from "@/components/ui/progress-indicator";
 import { Separator } from "@/components/ui/separator";
 
 interface BatteryData {
@@ -272,15 +272,7 @@ export default function BatteryMonitoringChart({
 
         {/* Battery Health */}
         {batteryHealth !== undefined && (
-          <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <h4 className="text-sm font-medium">Battery Health</h4>
-              <span className="text-sm font-medium">
-                {batteryHealth.toFixed(1)}%
-              </span>
-            </div>
-            <Progress value={batteryHealth} className="h-2" />
-          </div>
+          <ProgressIndicator title="Battery Health" value={batteryHealth} />
         )}
 
         {/* Estimated Remaining Time */}

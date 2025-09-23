@@ -30,7 +30,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
-import { Progress } from "@/components/ui/progress";
+import { ProgressIndicator } from "@/components/ui/progress-indicator";
 import { Separator } from "@/components/ui/separator";
 
 interface QualityData {
@@ -337,15 +337,10 @@ export default function QualityControlChart({
         </div>
 
         {/* Overall Data Quality Progress */}
-        <div className="space-y-2">
-          <div className="flex items-center justify-between">
-            <h4 className="text-sm font-medium">Overall Data Quality</h4>
-            <span className="text-sm font-medium">
-              {goodDataPercentage.toFixed(1)}%
-            </span>
-          </div>
-          <Progress value={goodDataPercentage} className="h-2" />
-        </div>
+        <ProgressIndicator
+          title="Overall Data Quality"
+          value={goodDataPercentage}
+        />
 
         <Separator />
 
